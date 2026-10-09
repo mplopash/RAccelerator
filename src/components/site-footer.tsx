@@ -13,7 +13,7 @@ const columns = [
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-line">
+    <footer className="relative z-10 border-t border-line">
       <Container className="py-14 md:py-16">
         <div className="grid gap-10 md:grid-cols-[1.3fr_1fr_1fr_1fr]">
           <div>
