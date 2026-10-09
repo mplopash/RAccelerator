@@ -20,9 +20,9 @@ export const site = {
 } as const;
 
 export const nav = [
-  { href: "/#features", label: "Features" },
-  { href: "/#solutions", label: "Solutions" },
-  { href: "/#why", label: "Why RAccelerator" },
-  { href: "/#security", label: "Security" },
-  { href: "/#faq", label: "FAQ" },
+  { href: "#features", label: "Features" },
+  { href: "#solutions", label: "Solutions" },
+  { href: "#why", label: "Why RAccelerator" },
+  { href: "#security", label: "Security" },
+  { href: "#faq", label: "FAQ" },
 ] as const;

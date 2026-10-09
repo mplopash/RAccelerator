@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Lato } from "next/font/google";
+import { InteractProvider } from "@/components/interact";
+import { MotionChrome } from "@/components/motion-chrome";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { site } from "@/lib/site";
@@ -50,17 +52,32 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${lato.variable} h-full antialiased`}>
+    <html
+      lang="en"
+      className={`${lato.variable} h-full antialiased`}
+      suppressHydrationWarning
+    >
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "try{if(localStorage.getItem('theme')==='dark')document.documentElement.classList.add('dark')}catch(e){}",
+          }}
+        />
+      </head>
       <body className="flex min-h-full flex-col font-sans">
+        <InteractProvider>
+        <MotionChrome />
         <a
           href="#features"
-          className="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-3 focus:z-50 focus:rounded-lg focus:bg-accent focus:px-3 focus:py-2 focus:text-background"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-3 focus:z-50 focus:rounded-lg focus:bg-accent focus:px-3 focus:py-2 focus:text-on-accent"
         >
           Skip to content
         </a>
         <SiteHeader />
         <div className="flex flex-1 flex-col">{children}</div>
         <SiteFooter />
+        </InteractProvider>
       </body>
     </html>
   );

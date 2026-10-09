@@ -1,6 +1,9 @@
 "use client";
 
+import Lenis from "lenis";
 import { useEffect, useRef, useState } from "react";
+import { setLenis } from "@/lib/lenis-bridge";
+import "lenis/dist/lenis.css";
 
 export function MotionChrome() {
   const indexRef = useRef<HTMLElement>(null);
@@ -22,38 +25,46 @@ export function MotionChrome() {
       root.classList.add("has-cursor");
     }
 
-    const onScroll = () => {
-      const max = root.scrollHeight - window.innerHeight;
-      const progress = max > 0 ? window.scrollY / max : 0;
+    const hero = document.querySelector<HTMLElement>(".hero-field");
+
+    const paint = (scroll: number, limit: number) => {
+      const progress = limit > 0 ? scroll / limit : 0;
       const value = String(Math.min(8, Math.round(progress * 7) + 1)).padStart(
         3,
         "0",
       );
       if (indexRef.current) indexRef.current.textContent = value;
-
-      const pin = document.querySelector<HTMLElement>(".pin");
-      if (!pin || reduce) {
-        root.style.removeProperty("--pin-progress");
-        return;
+      root.style.setProperty("--scroll", progress.toFixed(4));
+      if (hero && !reduce) {
+        const shift = Math.min(scroll, 520) * 0.16;
+        hero.style.transform = `translate3d(0, ${shift.toFixed(2)}px, 0)`;
       }
-      const distance = pin.offsetHeight - window.innerHeight;
-      const passed = Math.min(
-        Math.max(-pin.getBoundingClientRect().top, 0),
-        Math.max(distance, 0),
-      );
-      root.style.setProperty(
-        "--pin-progress",
-        distance > 0 ? (passed / distance).toFixed(4) : "0",
-      );
     };
 
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
+    const lenis = new Lenis({
+      autoRaf: true,
+      lerp: reduce ? 1 : 0.075,
+      wheelMultiplier: 0.85,
+      touchMultiplier: 1,
+      syncTouch: !reduce,
+      syncTouchLerp: 0.08,
+      anchors: { offset: -76 },
+      stopInertiaOnNavigate: true,
+      respectReducedMotion: true,
+    });
+    setLenis(lenis);
+    paint(lenis.scroll, lenis.limit);
+    const unbind = lenis.on("scroll", (instance) => {
+      paint(instance.scroll, instance.limit);
+    });
 
     return () => {
+      unbind();
+      lenis.destroy();
+      setLenis(null);
       root.classList.remove("has-cursor");
-      root.style.removeProperty("--pin-progress");
-      window.removeEventListener("scroll", onScroll);
+      root.style.removeProperty("--scroll");
+      if (hero) hero.style.removeProperty("transform");
     };
   }, []);
 
@@ -100,7 +111,8 @@ export function MotionChrome() {
 
   return (
     <>
-      <p className="pointer-events-none fixed right-5 bottom-5 z-40 font-mono text-xs tracking-[0.22em] text-muted">
+      <div className="scroll-progress" aria-hidden="true" />
+      <p className="pointer-events-none fixed right-5 bottom-5 z-40 text-xs font-black tracking-[0.22em] text-muted">
         <span ref={indexRef}>001</span>
         <span className="text-line"> / 008</span>
       </p>

@@ -1,5 +1,5 @@
-import Link from "next/link";
 import { Container } from "@/components/container";
+import { InteractButton } from "@/components/interact";
 import { ClassReport, GapPanel } from "@/components/product-panels";
 import {
   audiences,
@@ -53,8 +53,9 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <section className="border-b border-line">
-        <Container className="grid items-center gap-12 py-14 md:py-20 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)]">
+      <section className="relative overflow-hidden border-b border-line">
+        <div className="hero-field pointer-events-none absolute inset-0" aria-hidden="true" />
+        <Container className="relative grid items-center gap-12 py-14 md:py-20 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)]">
           <div>
             <p className="text-xs font-black tracking-[0.18em] text-accent uppercase">
               AI-Enabled Regulatory Acceleration for MedTech
@@ -67,18 +68,19 @@ export default function Home() {
               {site.description}
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <a
-                href={site.productUrl}
-                className="inline-flex h-12 items-center rounded-xl bg-accent px-5 text-sm font-black text-background"
+              <InteractButton
+                mode="pulse"
+                target="gap-panel"
+                className="btn-primary inline-flex h-12 items-center rounded-xl bg-accent px-5 text-sm font-black text-on-accent"
               >
                 Start Gap Assessment
-              </a>
-              <a
-                href={site.productUrl}
-                className="inline-flex h-12 items-center rounded-xl border border-accent px-5 text-sm font-black text-accent"
+              </InteractButton>
+              <InteractButton
+                mode="demo"
+                className="btn-ghost inline-flex h-12 items-center rounded-xl border border-accent px-5 text-sm font-black text-accent"
               >
                 Book a Demo
-              </a>
+              </InteractButton>
             </div>
             <p className="mt-10 text-xs font-black tracking-[0.16em] text-muted uppercase">
               Supports Workflows Aligned To
@@ -97,6 +99,23 @@ export default function Home() {
           <GapPanel />
         </Container>
       </section>
+
+      <div className="marquee" aria-hidden="true">
+        <div className="marquee-track">
+          {[0, 1].map((copy) => (
+            <ul key={copy} className="flex">
+              {standards.map((standard) => (
+                <li
+                  key={`${copy}-${standard}`}
+                  className="px-8 py-4 text-sm font-black tracking-[0.14em] text-ink uppercase"
+                >
+                  {standard}
+                </li>
+              ))}
+            </ul>
+          ))}
+        </div>
+      </div>
 
       <section aria-label="Coverage">
         <Container>
@@ -125,7 +144,7 @@ export default function Home() {
             {capabilities.map((item, index) => (
               <li
                 key={item.title}
-                className="reveal grid gap-3 py-7 md:grid-cols-[4.5rem_16rem_1fr] md:items-baseline md:gap-8"
+                className="cap-row reveal grid gap-3 px-2 py-7 md:grid-cols-[4.5rem_16rem_1fr] md:items-baseline md:gap-8"
               >
                 <p className="font-black text-accent">
                   {String(index + 1).padStart(2, "0")}
@@ -140,7 +159,7 @@ export default function Home() {
         </Container>
       </section>
 
-      <section id="solutions" className="scroll-mt-20 border-y border-line bg-[#07182c]/60 py-16 md:py-24">
+      <section id="solutions" className="scroll-mt-20 border-y border-line bg-surface py-16 md:py-24">
         <Container className="grid items-start gap-10 lg:grid-cols-2">
           <div>
             <p className="text-xs font-black tracking-[0.18em] text-accent uppercase">
@@ -168,7 +187,7 @@ export default function Home() {
           <h3 className="mt-8 text-xl font-black text-ink">Not All AI Is Created Equal</h3>
           <ul className="mt-8 grid gap-4 md:grid-cols-3">
             {proofs.map((proof) => (
-              <li key={proof.title} className="rounded-2xl border border-line p-5">
+              <li key={proof.title} className="glass reveal rounded-2xl border border-line p-5 backdrop-blur-xl backdrop-saturate-150">
                 <h4 className="text-lg font-black text-ink">{proof.title}</h4>
                 <p className="mt-3 text-sm leading-7 text-muted">{proof.body}</p>
               </li>
@@ -187,7 +206,7 @@ export default function Home() {
                 ))}
               </ul>
             </div>
-            <div className="border-t border-line bg-[#07182c] p-6 md:border-t-0 md:border-l md:p-8">
+            <div className="glass border-t border-line p-6 backdrop-blur-xl backdrop-saturate-150 md:border-t-0 md:border-l md:p-8">
               <h3 className="text-sm font-black tracking-[0.16em] text-accent uppercase">
                 RAccelerator Deterministic AI
               </h3>
@@ -220,7 +239,7 @@ export default function Home() {
           </ul>
           <div className="mt-10 grid gap-4 md:grid-cols-2">
             {quotes.map((item) => (
-              <blockquote key={item.role} className="rounded-2xl border border-line p-6">
+              <blockquote key={item.role} className="glass reveal rounded-2xl border border-line p-6 backdrop-blur-xl backdrop-saturate-150">
                 <p className="text-lg leading-8 font-bold text-ink">“{item.quote}”</p>
                 <footer className="mt-5 text-sm text-muted">
                   <span className="font-black text-ink">{item.role}</span>
@@ -229,7 +248,10 @@ export default function Home() {
               </blockquote>
             ))}
           </div>
-          <article className="mt-4 rounded-2xl border border-line bg-[#07182c] p-6 md:p-8">
+          <article
+            id="case-study"
+            className="glass mt-4 rounded-2xl border border-line p-6 backdrop-blur-xl backdrop-saturate-150 md:p-8"
+          >
             <p className="text-xs font-black tracking-[0.16em] text-accent uppercase">
               Case Study: 60% Faster NB Submission
             </p>
@@ -238,12 +260,13 @@ export default function Home() {
               timeline from 9 months to under 4 using RAccelerator’s automated
               GSPR assessment and gap remediation workflow.
             </p>
-            <Link
-              href="/#trust"
-              className="mt-6 inline-flex text-sm font-black text-accent"
+            <InteractButton
+              mode="pulse"
+              target="case-study"
+              className="mt-6 text-sm font-black text-accent"
             >
               Read Case Study
-            </Link>
+            </InteractButton>
           </article>
         </Container>
       </section>

@@ -14,11 +14,14 @@ const barClass = {
 
 export function GapPanel() {
   return (
-    <figure className="rounded-2xl border border-line bg-[#07182c] p-4 shadow-[0_24px_80px_rgb(0_0_0/0.28)] md:p-5">
+    <figure
+      id="gap-panel"
+      className="glass float-panel rounded-2xl border border-line p-4 shadow-[0_24px_70px_rgb(4_20_40/0.12)] backdrop-blur-xl backdrop-saturate-150 md:p-5"
+    >
       <figcaption className="mb-3 font-bold text-accent">
         GSPR Gaps Auto-Detected.
       </figcaption>
-      <div className="rounded-xl border border-line bg-[#041428] p-4 md:p-5">
+      <div className="device rounded-xl border border-line p-4 md:p-5">
         <div className="flex items-center gap-2">
           <span className="size-2 rounded-full bg-[#ff6b6b]" />
           <span className="size-2 rounded-full bg-[#f0c36a]" />
@@ -68,7 +71,7 @@ export function GapPanel() {
 
 export function ClassReport() {
   return (
-    <figure className="rounded-2xl border border-line bg-[#07182c] p-5 md:p-6">
+    <figure className="glass float-panel rounded-2xl border border-line p-5 shadow-[0_24px_70px_rgb(4_20_40/0.1)] backdrop-blur-xl backdrop-saturate-150 md:p-6">
       <figcaption className="text-sm font-bold tracking-[0.16em] text-muted uppercase">
         Device Classification Report
       </figcaption>
