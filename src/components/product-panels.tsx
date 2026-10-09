@@ -16,7 +16,7 @@ export function GapPanel({ className = "" }: { className?: string }) {
   return (
     <figure
       id="gap-panel"
-      className={`rounded-2xl border border-stroke bg-surface/70 p-5 backdrop-blur-xl backdrop-saturate-150 md:p-6 ${className}`}
+      className={`panel rounded-2xl border border-stroke p-5 md:p-6 ${className}`}
     >
       <figcaption className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-2">
         <p className="font-mono text-[11px] tracking-[0.2em] text-accent uppercase">
@@ -73,7 +73,7 @@ export function GapPanel({ className = "" }: { className?: string }) {
 
 export function ClassReport() {
   return (
-    <figure className="rounded-2xl border border-stroke bg-surface/70 p-5 backdrop-blur-xl backdrop-saturate-150 md:p-6">
+    <figure className="panel rounded-2xl border border-stroke p-5 md:p-6">
       <figcaption className="font-mono text-[11px] tracking-[0.18em] text-muted uppercase">
         Device Classification Report
       </figcaption>

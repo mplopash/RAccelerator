@@ -1,5 +1,5 @@
 import { Container } from "@/components/container";
-import { HeroCanvas } from "@/components/hero-canvas";
+import { DossierField } from "@/components/dossier-field";
 import { InteractButton } from "@/components/interact";
 import { ClassReport, GapPanel } from "@/components/product-panels";
 import { Reveal } from "@/components/reveal";
@@ -64,9 +64,8 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <section className="hero-stage relative isolate flex min-h-[calc(100svh-4.5rem)] flex-col overflow-hidden">
-        <HeroCanvas />
-        <div className="hero-vignette pointer-events-none absolute inset-0" aria-hidden="true" />
+      <DossierField />
+      <section className="hero-stage relative z-10 flex min-h-[calc(100svh-4.5rem)] flex-col">
         <div className="relative z-10 flex flex-1 flex-col items-center justify-center px-5 py-16 text-center md:px-8">
           <Reveal>
             <p className="hero-kicker font-mono text-[11px] tracking-[0.28em] uppercase">
@@ -111,7 +110,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-background">
+      <section>
         <Container className="py-10 md:py-14">
           <GapPanel />
         </Container>
@@ -140,7 +139,7 @@ export default function Home() {
             {metrics.map((metric) => (
               <div
                 key={metric.label}
-                className="reveal rounded-2xl border border-stroke bg-surface/65 px-5 py-7 backdrop-blur-xl"
+                className="panel reveal rounded-2xl border border-stroke px-5 py-7"
               >
                 <dt className="font-mono text-[11px] leading-5 tracking-[0.14em] text-muted uppercase">
                   {metric.label}
@@ -166,7 +165,7 @@ export default function Home() {
             {capabilities.map((item, index) => (
               <li
                 key={item.title}
-                className={`reveal rounded-2xl border border-stroke bg-white/50 p-6 shadow-[0_18px_44px_rgb(4_20_40/0.04)] backdrop-blur-xl dark:bg-surface/40 ${moduleSpan[index]}`}
+                className={`panel reveal rounded-2xl border border-stroke p-6 ${moduleSpan[index]}`}
               >
                 <p className="font-mono text-[11px] tracking-[0.18em] text-accent">
                   {String(index + 1).padStart(2, "0")}
@@ -183,7 +182,7 @@ export default function Home() {
 
       <section id="solutions" className="scroll-mt-20 py-16 md:py-28">
         <Container className="grid items-start gap-4 lg:grid-cols-12">
-          <div className="rounded-2xl border border-stroke bg-surface/55 p-6 backdrop-blur-xl md:p-8 lg:col-span-5">
+          <div className="panel rounded-2xl border border-stroke p-6 md:p-8 lg:col-span-5">
             <p className="font-mono text-[11px] tracking-[0.2em] text-accent uppercase">
               Solutions
             </p>
@@ -213,7 +212,7 @@ export default function Home() {
             {proofs.map((proof) => (
               <li
                 key={proof.title}
-                className="reveal rounded-2xl border border-stroke bg-surface/65 p-6 backdrop-blur-xl"
+                className="panel reveal rounded-2xl border border-stroke p-6"
               >
                 <h4 className="text-xl font-black text-ink">{proof.title}</h4>
                 <p className="mt-3 text-sm leading-7 text-muted">{proof.body}</p>
@@ -221,7 +220,7 @@ export default function Home() {
             ))}
           </ul>
           <div className="mt-4 grid gap-4 md:grid-cols-2">
-            <div className="rounded-2xl border border-stroke p-6 md:p-8">
+            <div className="panel rounded-2xl border border-stroke p-6 md:p-8">
               <h3 className="font-mono text-[11px] tracking-[0.16em] text-muted uppercase">
                 Generic AI
               </h3>
@@ -233,7 +232,7 @@ export default function Home() {
                 ))}
               </ul>
             </div>
-            <div className="rounded-2xl border border-stroke bg-surface/70 p-6 backdrop-blur-xl md:p-8">
+            <div className="panel rounded-2xl border border-stroke p-6 md:p-8">
               <h3 className="font-mono text-[11px] tracking-[0.16em] text-accent uppercase">
                 RAccelerator Deterministic AI
               </h3>
@@ -271,7 +270,7 @@ export default function Home() {
             {quotes.map((item) => (
               <blockquote
                 key={item.role}
-                className="reveal rounded-2xl border border-stroke bg-surface/65 p-6 backdrop-blur-xl"
+                className="panel reveal rounded-2xl border border-stroke p-6"
               >
                 <p className="text-lg leading-8 font-bold text-ink">“{item.quote}”</p>
                 <footer className="mt-5 text-sm text-muted">
@@ -283,7 +282,7 @@ export default function Home() {
           </div>
           <article
             id="case-study"
-            className="mt-4 rounded-2xl border border-stroke bg-surface/65 p-6 backdrop-blur-xl md:p-8"
+            className="panel mt-4 rounded-2xl border border-stroke p-6 md:p-8"
           >
             <p className="font-mono text-[11px] tracking-[0.16em] text-accent uppercase">
               Case Study: 60% Faster NB Submission
@@ -316,7 +315,7 @@ export default function Home() {
             {security.map((item, index) => (
               <li
                 key={item.title}
-                className={`rounded-2xl border border-stroke bg-surface/65 p-6 backdrop-blur-xl ${moduleSpan[index]}`}
+                className={`panel rounded-2xl border border-stroke p-6 ${moduleSpan[index]}`}
               >
                 <h3 className="text-lg font-black text-ink">{item.title}</h3>
                 <p className="mt-3 text-sm leading-7 text-muted">{item.body}</p>
@@ -340,7 +339,7 @@ export default function Home() {
               Common Questions from Regulatory Teams
             </h2>
           </div>
-          <div className="rounded-2xl border border-stroke bg-surface/55 px-5 backdrop-blur-xl md:px-7 lg:col-span-8">
+          <div className="panel rounded-2xl border border-stroke px-5 md:px-7 lg:col-span-8">
             {faqs.map((item, index) => (
               <details
                 key={item.question}

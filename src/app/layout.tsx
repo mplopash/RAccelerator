@@ -82,7 +82,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           Skip to content
         </a>
         <SiteHeader />
-        <div className="flex flex-1 flex-col">{children}</div>
+        <div className="relative z-10 flex flex-1 flex-col">{children}</div>
         <SiteFooter />
         </InteractProvider>
       </body>

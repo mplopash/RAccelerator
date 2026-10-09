@@ -126,13 +126,129 @@ html.dark .site-menu {
 }
 
 .hero-stage {
-  background: #eaeef4;
+  background: transparent;
   color: #065f4a;
 }
 
 html.dark .hero-stage {
-  background: #061410;
   color: #f4f7f2;
+}
+
+.dossier {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  background: #eaeef4;
+  color: rgb(6 95 74 / 0.34);
+}
+
+html.dark .dossier {
+  background: #061410;
+  color: rgb(110 255 206 / 0.3);
+}
+
+.dossier-grid {
+  position: absolute;
+  inset: -10%;
+  background-image:
+    linear-gradient(to right, currentColor 1px, transparent 1px),
+    linear-gradient(to bottom, currentColor 1px, transparent 1px);
+  background-size: 96px 96px;
+  opacity: 0.22;
+}
+
+.dossier-glow,
+.dossier-dial {
+  position: absolute;
+  left: 50%;
+  top: 46%;
+  width: min(108vmin, 1080px);
+  height: min(108vmin, 1080px);
+  transform: translate(-50%, -50%);
+}
+
+.dossier-glow {
+  background: radial-gradient(circle, currentColor 0%, transparent 68%);
+  opacity: 0.16;
+}
+
+.dossier-dial {
+  animation: dossier-spin 140s linear infinite;
+}
+
+.dossier-ring {
+  position: absolute;
+  inset: 22%;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  opacity: 0.55;
+}
+
+.dossier-ring:nth-child(2) {
+  inset: 6%;
+  border-style: dashed;
+  opacity: 0.4;
+}
+
+.dossier-ring:nth-child(3) {
+  inset: -6%;
+  opacity: 0.28;
+  background: repeating-conic-gradient(
+    from 0deg,
+    currentColor 0 0.6deg,
+    transparent 0.6deg 12deg
+  );
+  mask: radial-gradient(circle, transparent 63%, #000 64% 66%, transparent 67%);
+  -webkit-mask: radial-gradient(circle, transparent 63%, #000 64% 66%, transparent 67%);
+}
+
+.dossier-standards,
+.dossier-metrics {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.dossier-standards {
+  top: 12%;
+  bottom: 12%;
+  left: 2.5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 16rem;
+}
+
+.dossier-metrics {
+  top: 16%;
+  right: 2.5%;
+  display: grid;
+  gap: 1.75rem;
+  max-width: 14rem;
+  text-align: right;
+}
+
+.dossier-metrics span {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-size: 1.35rem;
+  letter-spacing: 0.08em;
+}
+
+.panel {
+  background: rgb(255 255 255 / 0.9);
+  backdrop-filter: blur(16px);
+}
+
+html.dark .panel {
+  background: rgb(7 30 54 / 0.9);
 }
 
 .hero-vignette {
@@ -502,6 +618,12 @@ html.dark .theme-moon {
   }
 }
 
+@keyframes dossier-spin {
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -521,8 +643,53 @@ html.dark .theme-moon {
   .theme-sun,
   .theme-moon,
   .theme-ripple,
-  .hero-field {
+  .hero-field,
+  .dossier-dial {
     animation: none;
     transition: none;
+  }
+}
+
+@media (max-width: 760px) {
+  .dossier-standards,
+  .dossier-metrics {
+    right: 0.75rem;
+    left: 0.75rem;
+    max-width: none;
+    overflow: hidden;
+    font-size: 8px;
+    letter-spacing: 0.12em;
+    line-height: 1.45;
+  }
+
+  .dossier-standards {
+    top: 4.75rem;
+    bottom: auto;
+    max-height: 4.5rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.15rem 0.55rem;
+  }
+
+  .dossier-metrics {
+    top: auto;
+    right: 0.75rem;
+    bottom: 4.6rem;
+    left: 0.75rem;
+    display: flex;
+    max-width: none;
+    max-height: 5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.15rem 0.55rem;
+    text-align: center;
+  }
+
+  .dossier-metrics span {
+    display: inline;
+    margin: 0 0.28rem 0 0;
+    font-size: 8px;
   }
 }
