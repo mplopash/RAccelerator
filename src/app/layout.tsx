@@ -1,42 +1,45 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import { MotionChrome } from "@/components/motion-chrome";
+import { Lato } from "next/font/google";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { site } from "@/lib/site";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const lato = Lato({
+  variable: "--font-lato",
   subsets: ["latin"],
-  display: "swap",
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  weight: ["400", "700", "900"],
   display: "swap",
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: site.name,
+    default: site.title,
     template: `%s · ${site.name}`,
   },
   description: site.description,
   applicationName: site.name,
+  keywords: [
+    "EU MDR",
+    "IVDR",
+    "GSPR",
+    "regulatory affairs",
+    "MedTech",
+    "device classification",
+    "21 CFR Part 11",
+  ],
   openGraph: {
     type: "website",
     locale: "en_US",
     url: site.url,
     siteName: site.name,
-    title: site.name,
+    title: site.title,
     description: site.description,
   },
   twitter: {
     card: "summary_large_image",
-    title: site.name,
+    title: site.title,
     description: site.description,
   },
   robots: {
@@ -47,14 +50,16 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="flex min-h-full flex-col">
+    <html lang="en" className={`${lato.variable} h-full antialiased`}>
+      <body className="flex min-h-full flex-col font-sans">
+        <a
+          href="#features"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-3 focus:z-50 focus:rounded-lg focus:bg-accent focus:px-3 focus:py-2 focus:text-background"
+        >
+          Skip to content
+        </a>
         <SiteHeader />
-        <MotionChrome />
-        <div className="flex flex-1 flex-col pt-16">{children}</div>
+        <div className="flex flex-1 flex-col">{children}</div>
         <SiteFooter />
       </body>
     </html>

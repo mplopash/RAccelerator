@@ -1,13 +1,13 @@
 @import "tailwindcss";
 
 :root {
-  --background: #090909;
-  --foreground: #f3f0e8;
-  --muted: #a39e94;
-  --line: rgb(243 240 232 / 0.16);
-  --accent: #e4ff4a;
-  --surface: #121212;
-  --ink: #f7f4ee;
+  --background: #041428;
+  --foreground: #f0f4f8;
+  --muted: #b7c5d4;
+  --line: rgb(240 244 248 / 0.14);
+  --accent: #6effce;
+  --surface: #07182c;
+  --ink: #f0f4f8;
 }
 
 @theme inline {
@@ -18,8 +18,7 @@
   --color-accent: var(--accent);
   --color-surface: var(--surface);
   --color-ink: var(--ink);
-  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
-  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+  --font-sans: var(--font-lato), "Lato", "Segoe UI", sans-serif;
 }
 
 html {
@@ -27,135 +26,39 @@ html {
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-sans);
-}
-
-body::before {
-  content: "";
-  pointer-events: none;
-  position: fixed;
-  inset: 0;
-  z-index: 30;
-  opacity: 0.22;
-  background-image: radial-gradient(
-    rgb(255 255 255 / 0.55) 0.6px,
-    transparent 0.7px
-  );
-  background-size: 3px 3px;
-  mix-blend-mode: overlay;
+  background: #041428;
+  color: #f0f4f8;
+  font-family: var(--font-lato), "Lato", "Segoe UI", sans-serif;
 }
 
 ::selection {
-  background: color-mix(in srgb, var(--accent) 35%, transparent);
-  color: #111;
+  background: #6effce;
+  color: #041428;
 }
 
-html.has-cursor,
-html.has-cursor * {
-  cursor: none !important;
+:focus-visible {
+  outline: 2px solid #6effce;
+  outline-offset: 3px;
 }
 
-.cursor-dot,
-.cursor-ring {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 80;
-  pointer-events: none;
-  border-radius: 999px;
-  mix-blend-mode: difference;
-  background: #fff;
-}
-
-.cursor-dot {
-  width: 6px;
-  height: 6px;
-  margin: -3px 0 0 -3px;
-}
-
-.cursor-ring {
-  width: 36px;
-  height: 36px;
-  margin: -18px 0 0 -18px;
-  background: transparent;
-  border: 1px solid #fff;
-  transition:
-    width 0.25s ease,
-    height 0.25s ease,
-    margin 0.25s ease;
-}
-
-.cursor-ring[data-hot="true"] {
-  width: 68px;
-  height: 68px;
-  margin: -34px 0 0 -34px;
+summary::-webkit-details-marker {
+  display: none;
 }
 
 .reveal {
   animation: rise linear both;
   animation-timeline: view();
-  animation-range: entry 0% cover 28%;
-}
-
-.marquee {
-  overflow: hidden;
-  border-block: 1px solid var(--line);
-}
-
-.marquee-track {
-  display: flex;
-  width: max-content;
-  animation: ticker 32s linear infinite;
-}
-
-.pin {
-  height: 280vh;
-}
-
-.pin-sticky {
-  position: sticky;
-  top: 0;
-  display: flex;
-  width: 100%;
-  height: 100vh;
-  align-items: center;
-  overflow: hidden;
-}
-
-.pin-track {
-  display: flex;
-  width: max-content;
-  gap: 1rem;
-  padding-inline: 6vw;
-  transform: translate3d(calc((100% - 100vw) * var(--pin-progress, 0) * -1), 0, 0);
-  will-change: transform;
-}
-
-.staff {
-  background-image: linear-gradient(
-    to bottom,
-    transparent 47px,
-    var(--line) 48px
-  );
-  background-size: 100% 48px;
+  animation-range: entry 0% cover 24%;
 }
 
 @keyframes rise {
   from {
     opacity: 0;
-    transform: translateY(1.75rem);
+    transform: translateY(0.75rem);
   }
   to {
     opacity: 1;
     transform: none;
-  }
-}
-
-@keyframes ticker {
-  to {
-    transform: translateX(-50%);
   }
 }
 
@@ -164,27 +67,7 @@ html.has-cursor * {
     scroll-behavior: auto;
   }
 
-  .reveal,
-  .marquee-track {
+  .reveal {
     animation: none;
-  }
-
-  .pin-track {
-    transform: none;
-  }
-
-  .pin {
-    height: auto;
-  }
-
-  .pin-sticky {
-    position: static;
-    height: auto;
-    overflow: visible;
-  }
-
-  .pin-track {
-    flex-direction: column;
-    padding-bottom: 4rem;
   }
 }
