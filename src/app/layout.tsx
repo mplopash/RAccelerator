@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Lato } from "next/font/google";
+import { IBM_Plex_Mono, Lato } from "next/font/google";
 import { InteractProvider } from "@/components/interact";
 import { MotionChrome } from "@/components/motion-chrome";
 import { SiteFooter } from "@/components/site-footer";
@@ -11,6 +11,13 @@ const lato = Lato({
   variable: "--font-lato",
   subsets: ["latin"],
   weight: ["400", "700", "900"],
+  display: "swap",
+});
+
+const plex = IBM_Plex_Mono({
+  variable: "--font-ibm",
+  subsets: ["latin"],
+  weight: ["400", "500"],
   display: "swap",
 });
 
@@ -54,7 +61,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${lato.variable} h-full antialiased`}
+      className={`${lato.variable} ${plex.variable} h-full antialiased`}
       suppressHydrationWarning
     >
       <head>

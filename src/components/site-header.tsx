@@ -7,10 +7,10 @@ import { nav, site } from "@/lib/site";
 
 export function SiteHeader() {
   return (
-    <header className="glass site-header sticky top-0 z-40 backdrop-blur-xl backdrop-saturate-150">
-      <Container className="flex h-16 items-center justify-between gap-6">
-        <Link href="/" className="flex items-center gap-2.5 text-ink">
-          <Logo className="size-8 shrink-0 text-accent" />
+    <header className="site-bar sticky top-0 z-40 px-5 md:px-8">
+      <Container className="flex h-16 items-center justify-between gap-6 !px-0">
+        <Link href="/" className="brand-link flex items-center gap-2.5">
+          <Logo className="brand-mark size-8 shrink-0" />
           <span className="text-[1.05rem] font-black tracking-tight">
             {site.name}
           </span>
@@ -20,7 +20,7 @@ export function SiteHeader() {
             <a
               key={item.href}
               href={item.href}
-              className="nav-link text-sm text-muted transition-colors hover:text-ink"
+              className="nav-link text-sm transition-colors"
             >
               {item.label}
             </a>
@@ -30,30 +30,30 @@ export function SiteHeader() {
           <ThemeToggle />
           <InteractButton
             mode="signin"
-            className="btn-ghost hidden rounded-xl border border-line px-4 py-2 text-sm font-bold text-ink sm:inline-flex"
+            className="signin-btn btn-ghost hidden rounded-full border px-4 py-2 text-sm font-bold sm:inline-flex"
           >
             Sign In
           </InteractButton>
           <InteractButton
             mode="demo"
-            className="btn-primary hidden rounded-xl bg-accent px-4 py-2 text-sm font-black text-on-accent sm:inline-flex"
+            className="btn-mint hidden rounded-full px-4 py-2 text-sm font-black sm:inline-flex"
           >
             Book a Demo
           </InteractButton>
         </div>
         <details className="relative lg:hidden">
-          <summary className="cursor-pointer list-none rounded-xl border border-line px-3 py-2 text-sm font-bold text-ink">
+          <summary className="menu-toggle cursor-pointer list-none rounded-full border px-3 py-2 text-sm font-bold">
             Menu
           </summary>
           <nav
             aria-label="Mobile"
-            className="glass absolute right-0 mt-2 w-64 rounded-xl border border-line p-3 shadow-lg backdrop-blur-xl backdrop-saturate-150"
+            className="site-menu absolute right-0 mt-2 w-64 rounded-2xl border p-3 shadow-lg backdrop-blur-xl"
           >
             {nav.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
-                className="block rounded-lg px-3 py-2 text-sm text-ink"
+                className="menu-link block rounded-lg px-3 py-2 text-sm"
               >
                 {item.label}
               </a>
