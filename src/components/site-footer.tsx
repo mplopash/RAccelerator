@@ -75,7 +75,7 @@ export function SiteFooter() {
             <InteractButton mode="note" label="Cookies">
               Cookies
             </InteractButton>
-            <Link href="/sitemap.xml">Sitemap</Link>
+            <a href="/sitemap.xml">Sitemap</a>
           </nav>
         </div>
       </Container>
