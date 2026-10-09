@@ -2,6 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
+  devIndicators: { position: "top-right" },
   poweredByHeader: false,
   typedRoutes: true,
   cacheComponents: true,

@@ -61,7 +61,7 @@ const scripts = [
 
 export default function ArchitecturePage() {
   return (
-    <main className="mx-auto w-full max-w-6xl px-6 py-16 md:py-20">
+    <main className="mx-auto w-full max-w-6xl px-6 py-16 md:px-8 md:py-20">
       <p className="font-mono text-xs tracking-[0.22em] text-accent uppercase">
         Project map
       </p>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { MotionChrome } from "@/components/motion-chrome";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { site } from "@/lib/site";
@@ -52,7 +53,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="flex min-h-full flex-col">
         <SiteHeader />
-        <div className="flex flex-1 flex-col">{children}</div>
+        <MotionChrome />
+        <div className="flex flex-1 flex-col pt-16">{children}</div>
         <SiteFooter />
       </body>
     </html>
