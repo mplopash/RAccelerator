@@ -32,7 +32,7 @@ export function Footer21st() {
   };
 
   return (
-    <footer className="relative z-20 overflow-hidden border-t border-ink/10 bg-surface/90 pt-16 pb-12 transition-colors dark:border-white/10 dark:bg-zinc-950/95 font-sans">
+    <footer className="relative z-20 overflow-hidden border-t border-slate-200/80 bg-slate-50/90 pt-16 pb-12 transition-colors dark:border-white/10 dark:bg-zinc-950/95 font-sans">
       {/* Volumetric Ambient Lighting */}
       <div 
         aria-hidden="true" 
@@ -42,17 +42,17 @@ export function Footer21st() {
       <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         
         {/* Pre-Footer Heroic Callout Card */}
-        <div className="relative overflow-hidden rounded-3xl border border-emerald-500/30 bg-gradient-to-br from-emerald-500/[0.08] via-surface to-teal-500/[0.05] p-8 sm:p-12 shadow-2xl backdrop-blur-2xl dark:border-emerald-400/25 dark:from-emerald-400/[0.08] dark:via-zinc-900/90 dark:to-teal-400/[0.05]">
+        <div className="relative overflow-hidden rounded-3xl border border-emerald-500/30 bg-gradient-to-br from-emerald-500/[0.08] via-white to-teal-500/[0.05] p-8 sm:p-12 shadow-xl backdrop-blur-2xl dark:border-emerald-400/25 dark:from-emerald-400/[0.08] dark:via-zinc-900/90 dark:to-teal-400/[0.05]">
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
             <div className="max-w-2xl">
               <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/25 bg-emerald-500/10 px-3.5 py-1 text-xs font-mono font-bold text-emerald-800 dark:border-emerald-400/30 dark:bg-emerald-400/15 dark:text-emerald-300">
                 <span className="size-2 rounded-full bg-emerald-500 animate-pulse" />
                 <span>NOTIFIED BODY DEFENSE READY</span>
               </div>
-              <h3 className="mt-4 text-3xl font-black tracking-tight sm:text-4xl lg:text-5xl text-ink">
+              <h3 className="mt-4 text-3xl font-black tracking-tight sm:text-4xl lg:text-5xl text-slate-900 dark:text-white">
                 Transform Months of Regulatory Friction into Verifiable Proof
               </h3>
-              <p className="mt-3 text-sm sm:text-base text-muted leading-relaxed">
+              <p className="mt-3 text-sm sm:text-base text-slate-600 dark:text-zinc-400 leading-relaxed">
                 Empower your regulatory and engineering teams with 100% deterministic reproducibility across EU MDR, IVDR, and 21 CFR Part 11.
               </p>
             </div>
@@ -70,9 +70,9 @@ export function Footer21st() {
 
               <InteractButton
                 mode="demo"
-                className="clay-button inline-flex h-12 items-center gap-2 rounded-full border border-ink/15 bg-surface/80 px-6 text-sm font-bold text-ink backdrop-blur-md dark:border-white/15 dark:bg-zinc-900/80 hover:border-emerald-500/40"
+                className="clay-button inline-flex h-12 items-center gap-2 rounded-full border border-slate-200 bg-white/90 px-6 text-sm font-bold text-slate-800 backdrop-blur-md dark:border-white/15 dark:bg-zinc-900/80 dark:text-white hover:border-emerald-500/40"
               >
-                <Activity className="size-4 text-accent" />
+                <Activity className="size-4 text-emerald-600 dark:text-emerald-400" />
                 <span>Book a Live Walkthrough</span>
               </InteractButton>
             </div>
@@ -80,7 +80,7 @@ export function Footer21st() {
         </div>
 
         {/* Multi-Column Main Ecosystem Grid */}
-        <div className="mt-16 grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-5 border-b border-ink/10 pb-12 dark:border-white/10">
+        <div className="mt-16 grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-5 border-b border-slate-200/80 pb-12 dark:border-white/10">
           
           {/* Col 1 & 2: Brand, Value Proposition & Regulatory Newsletter (2 cols) */}
           <div className="lg:col-span-2 space-y-5">
@@ -88,12 +88,12 @@ export function Footer21st() {
               <span className="flex size-7 items-center justify-center rounded-xl bg-emerald-600 text-white font-black text-sm shadow-md dark:bg-emerald-400 dark:text-zinc-950">
                 R
               </span>
-              <span className="text-xl font-black tracking-tight text-ink">
+              <span className="text-xl font-black tracking-tight text-slate-900 dark:text-white">
                 {site.name}
               </span>
             </div>
 
-            <p className="text-xs sm:text-sm text-muted leading-relaxed max-w-sm">
+            <p className="text-xs sm:text-sm text-slate-600 dark:text-zinc-400 leading-relaxed max-w-sm">
               The deterministic operating system for MedTech regulatory affairs. Translating complex device specifications into submission-grade, zero-drift technical documentation.
             </p>
 
@@ -111,7 +111,7 @@ export function Footer21st() {
 
             {/* Regulatory Intelligence Newsletter */}
             <div className="pt-2">
-              <span className="text-xs font-mono uppercase tracking-wider text-muted font-bold block mb-2">
+              <span className="text-xs font-mono uppercase tracking-wider text-slate-500 dark:text-zinc-400 font-bold block mb-2">
                 Executive MDCG & FDA Guidance Alerts
               </span>
               {subscribed ? (
@@ -122,19 +122,19 @@ export function Footer21st() {
               ) : (
                 <form onSubmit={handleSubscribe} className="flex gap-2 max-w-sm">
                   <div className="relative flex-1">
-                    <Mail className="absolute left-3 top-1/2 -translate-y-1/2 size-3.5 text-muted" />
+                    <Mail className="absolute left-3 top-1/2 -translate-y-1/2 size-3.5 text-slate-400" />
                     <input
                       type="email"
                       required
                       placeholder="regulatory.lead@medtech.com"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
-                      className="w-full rounded-xl border border-ink/10 bg-surface/80 py-2 pl-9 pr-3 text-xs text-ink placeholder:text-muted focus:border-emerald-500 focus:outline-none focus:ring-1 focus:ring-emerald-500 dark:border-white/10 dark:bg-zinc-900/80 dark:text-white"
+                      className="w-full rounded-xl border border-slate-200 bg-white py-2 pl-9 pr-3 text-xs text-slate-900 placeholder:text-slate-400 focus:border-emerald-500 focus:outline-none focus:ring-1 focus:ring-emerald-500 dark:border-white/10 dark:bg-zinc-900/80 dark:text-white"
                     />
                   </div>
                   <button
                     type="submit"
-                    className="clay-button inline-flex items-center gap-1.5 rounded-xl bg-ink text-background px-4 py-2 text-xs font-bold transition-transform hover:scale-105 dark:bg-white dark:text-zinc-950"
+                    className="clay-button inline-flex items-center gap-1.5 rounded-xl bg-emerald-700 text-white px-4 py-2 text-xs font-bold transition-transform hover:scale-105 dark:bg-white dark:text-zinc-950"
                   >
                     <span>Join</span>
                     <Send className="size-3" />
