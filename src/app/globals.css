@@ -1025,3 +1025,111 @@ html.dark .clay-button:hover {
 .perspective-1000 {
   perspective: 1000px;
 }
+
+.dossier {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  background: var(--background);
+  color: rgb(6 95 74 / 0.18);
+}
+
+html.dark .dossier {
+  background: #061410;
+  color: rgb(110 255 206 / 0.15);
+}
+
+.dossier-grid {
+  position: absolute;
+  inset: -10%;
+  background-image:
+    linear-gradient(to right, currentColor 1px, transparent 1px),
+    linear-gradient(to bottom, currentColor 1px, transparent 1px);
+  background-size: 96px 96px;
+  opacity: 0.15;
+}
+
+.dossier-glow,
+.dossier-dial {
+  position: absolute;
+  left: 50%;
+  top: calc(4rem + (100dvh - 4rem) / 2);
+  width: min(calc((100vw - 1.5rem) / 1.12), calc((100dvh - 5.5rem) / 1.12));
+  height: min(calc((100vw - 1.5rem) / 1.12), calc((100dvh - 5.5rem) / 1.12));
+  transform: translate(-50%, -50%);
+}
+
+.dossier-glow {
+  background: radial-gradient(circle, currentColor 0%, transparent 68%);
+  opacity: 0.1;
+}
+
+.dossier-ring {
+  position: absolute;
+  inset: 22%;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  opacity: 0.35;
+}
+
+.dossier-ring:nth-child(2) {
+  inset: 6%;
+  border-style: dashed;
+  opacity: 0.25;
+}
+
+.dossier-ring:nth-child(3) {
+  inset: -6%;
+  opacity: 0.18;
+  background: repeating-conic-gradient(from 0deg, currentColor 0 0.6deg, transparent 0.6deg 12deg);
+  mask: radial-gradient(circle, transparent 63%, #000 64% 66%, transparent 67%);
+  -webkit-mask: radial-gradient(circle, transparent 63%, #000 64% 66%, transparent 67%);
+}
+
+.dossier-standards,
+.dossier-metrics {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  opacity: 0.4;
+}
+
+.dossier-standards {
+  top: 12%;
+  bottom: 12%;
+  left: 2.5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 16rem;
+}
+
+.dossier-metrics {
+  top: 16%;
+  right: 2.5%;
+  display: grid;
+  gap: 1.75rem;
+  max-width: 14rem;
+  text-align: right;
+}
+
+.dossier-metrics span {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-size: 1.35rem;
+  letter-spacing: 0.08em;
+}
+
+@media (max-width: 760px) {
+  .dossier-standards,
+  .dossier-metrics {
+    display: none;
+  }
+}

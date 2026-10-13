@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { IBM_Plex_Mono, Inter } from "next/font/google";
 import { InteractProvider } from "@/components/interact";
 import { MotionChrome } from "@/components/motion-chrome";
-import { SiteFooter } from "@/components/site-footer";
+import { Footer21st } from "@/components/21st/footer-21st";
+import { CustomCursor } from "@/components/21st/custom-cursor";
 import { SiteHeader } from "@/components/site-header";
 import { site } from "@/lib/site";
 import "./globals.css";
@@ -73,6 +74,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         />
       </head>
       <body className="flex min-h-full flex-col font-sans">
+        <CustomCursor />
         <InteractProvider>
         <MotionChrome />
         <a
@@ -83,7 +85,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         </a>
         <SiteHeader />
         <div className="relative z-10 flex flex-1 flex-col">{children}</div>
-        <SiteFooter />
+        <Footer21st />
         </InteractProvider>
       </body>
     </html>
