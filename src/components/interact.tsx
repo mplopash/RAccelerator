@@ -89,7 +89,7 @@ export function InteractProvider({ children }: { children: ReactNode }) {
             role="dialog"
             aria-modal="true"
             aria-labelledby={titleId}
-            className="sheet-card backdrop-blur-2xl backdrop-saturate-150"
+            className="sheet-card"
             onClick={(event) => event.stopPropagation()}
           >
             <div className="flex items-start justify-between gap-4">

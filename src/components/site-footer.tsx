@@ -1,7 +1,5 @@
-import Link from "next/link";
 import { Container } from "@/components/container";
 import { InteractButton } from "@/components/interact";
-import { Logo } from "@/components/logo";
 import { footer } from "@/lib/content";
 import { site } from "@/lib/site";
 
@@ -13,72 +11,59 @@ const columns = [
 
 export function SiteFooter() {
   return (
-    <footer className="relative z-10 border-t border-line">
-      <Container className="py-14 md:py-16">
-        <div className="grid gap-10 md:grid-cols-[1.3fr_1fr_1fr_1fr]">
+    <footer className="band relative z-10 overflow-hidden border-t border-stroke">
+      <Container className="pt-7 pb-2 md:pt-8">
+        <nav aria-label="Social" className="flex flex-wrap gap-x-6 gap-y-2 border-b border-stroke pb-4">
+          {footer.social.map((name) => (
+            <InteractButton key={name} mode="note" label={name} className="link-rule text-sm text-ink">
+              {name}
+            </InteractButton>
+          ))}
+        </nav>
+        <div className="grid gap-8 border-b border-stroke py-6 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,2fr)] lg:gap-16 lg:py-8">
           <div>
-            <Link href="/" className="flex items-center gap-2.5 text-ink">
-              <Logo className="size-8 text-accent" />
-              <span className="text-lg font-black">{site.name}</span>
-            </Link>
-            <p className="mt-4 max-w-xs text-sm leading-6 text-muted">
-              Regulatory intelligence for MedTech. Accelerating device lifecycle
-              management from classification to NB submission.
+            <p className="max-w-[14rem] text-3xl leading-tight font-black tracking-tight text-ink md:text-4xl">
+              {footer.tagline}
             </p>
             <InteractButton
-              mode="note"
-              label="www.RAccelerator.ai"
-              className="mt-4 text-sm font-bold text-accent"
+              mode="demo"
+              className="btn-mint mt-5 inline-flex rounded-full px-4 py-2 text-sm font-black"
             >
-              www.RAccelerator.ai
+              Book a Demo
             </InteractButton>
           </div>
-          {columns.map((column) => (
-            <div key={column.title}>
-              <p className="text-xs font-black tracking-[0.16em] text-muted uppercase">
-                {column.title}
-              </p>
-              <ul className="mt-4 space-y-2">
-                {column.links.map((link) => (
-                  <li key={link.label}>
-                    {link.href.startsWith("http") ? (
-                      <InteractButton
-                        mode="note"
-                        label={link.label}
-                        className="text-sm text-ink/80 hover:text-ink"
-                      >
-                        {link.label}
-                      </InteractButton>
-                    ) : (
-                      <a
-                        href={link.href.replace(/^\//, "")}
-                        className="text-sm text-ink/80 hover:text-ink"
-                      >
-                        {link.label}
-                      </a>
-                    )}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+          <div className="grid gap-6 sm:grid-cols-3 sm:gap-8">
+            {columns.map((column) => (
+              <div key={column.title}>
+                <p className="text-sm font-semibold text-accent">{column.title}</p>
+                <ul className="mt-3 space-y-2">
+                  {column.links.map((link) => (
+                    <li key={link.label}>
+                      {"href" in link && link.href ? (
+                        <a href={link.href} className="link-rule text-sm text-ink">
+                          {link.label}
+                        </a>
+                      ) : (
+                        <InteractButton
+                          mode="note"
+                          label={link.label}
+                          className="link-rule text-left text-sm text-ink"
+                        >
+                          {link.label}
+                        </InteractButton>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
         </div>
-        <div className="mt-12 flex flex-col gap-3 border-t border-line pt-6 text-sm text-muted sm:flex-row sm:items-center sm:justify-between">
-          <p>© 2026 RAccelerator LLC. All rights reserved.</p>
-          <nav aria-label="Legal" className="flex gap-4">
-            <InteractButton mode="note" label="Privacy">
-              Privacy
-            </InteractButton>
-            <InteractButton mode="note" label="Terms">
-              Terms
-            </InteractButton>
-            <InteractButton mode="note" label="Cookies">
-              Cookies
-            </InteractButton>
-            <a href="/sitemap.xml">Sitemap</a>
-          </nav>
-        </div>
+        <p className="pt-4 font-mono text-[11px] tracking-[0.14em] text-muted">
+          © 2026 {site.legalName}
+        </p>
       </Container>
+      <p className="footer-mark pt-3 pb-1 text-ink">{site.name}</p>
     </footer>
   );
 }

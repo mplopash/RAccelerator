@@ -43,3 +43,6 @@ next-env.d.ts
 
 # local Cursor rules
 .cursor/rules/
+
+# local agents & skills
+.agents/

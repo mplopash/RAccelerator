@@ -156,26 +156,28 @@ export const faqs = [
 ] as const;
 
 export const footer = {
+  tagline: "Regulatory intelligence for MedTech.",
+  social: ["LinkedIn", "Instagram", "X", "YouTube"],
   product: [
-    { label: "Features", href: "/#features" },
-    { label: "How It Works", href: "/#solutions" },
-    { label: "Pricing", href: "/#faq" },
-    { label: "Security", href: "/#security" },
-    { label: "API Docs", href: "/#security" },
+    { label: "Features", href: "#features" },
+    { label: "How It Works" },
+    { label: "Pricing" },
+    { label: "Security", href: "#security" },
+    { label: "API Docs" },
   ],
   resources: [
-    { label: "Blog", href: "https://www.raccelerator.ai" },
-    { label: "EU MDR Guide", href: "/#why" },
-    { label: "GSPR Checklist", href: "/#features" },
-    { label: "Webinars", href: "https://www.raccelerator.ai" },
-    { label: "Case Studies", href: "/#trust" },
+    { label: "Blog" },
+    { label: "EU MDR Guide" },
+    { label: "GSPR Checklist" },
+    { label: "Webinars" },
+    { label: "Case Studies" },
   ],
   company: [
-    { label: "About", href: "/#why" },
-    { label: "Careers", href: "https://www.raccelerator.ai" },
-    { label: "Contact", href: "/#faq" },
-    { label: "Privacy Policy", href: "https://www.raccelerator.ai" },
-    { label: "Terms of Service", href: "https://www.raccelerator.ai" },
+    { label: "About" },
+    { label: "Careers" },
+    { label: "Contact" },
+    { label: "Privacy Policy" },
+    { label: "Terms of Service" },
   ],
 } as const;
 
