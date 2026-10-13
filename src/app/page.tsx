@@ -4,7 +4,7 @@ import { Loader21st } from "@/components/21st/loader-21st";
 import { Hero21st } from "@/components/21st/hero-21st";
 import { StandardsMarquee21st } from "@/components/21st/standards-marquee-21st";
 import { StudioShowcase21st } from "@/components/21st/studio-showcase-21st";
-import { InteractiveSandbox21st } from "@/components/21st/interactive-sandbox-21st";
+import { DeviceDiagnosticScroll } from "@/components/21st/device-diagnostic-scroll";
 import { Comparison21st } from "@/components/21st/comparison-21st";
 import { Metrics21st } from "@/components/21st/metrics-21st";
 import { Testimonials21st } from "@/components/21st/testimonials-21st";
@@ -62,7 +62,7 @@ export default function Home() {
       <Hero21st />
       <StandardsMarquee21st />
       <StudioShowcase21st />
-      <InteractiveSandbox21st />
+      <DeviceDiagnosticScroll />
       <Comparison21st />
       <Metrics21st />
       <Testimonials21st />

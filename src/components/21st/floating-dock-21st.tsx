@@ -19,7 +19,7 @@ import { ThemeToggle } from "@/components/theme-toggle";
 const DOCK_ITEMS = [
   { label: "Hero", href: "#top", icon: Home },
   { label: "Bento Grid", href: "#features", icon: Layers },
-  { label: "3D Sandbox", href: "#sandbox", icon: Scan },
+  { label: "Diagnostics", href: "#sandbox", icon: Scan },
   { label: "Deterministic AI", href: "#why", icon: Scale },
   { label: "Security", href: "#security", icon: Shield },
   { label: "FAQ", href: "#faq", icon: HelpCircle },

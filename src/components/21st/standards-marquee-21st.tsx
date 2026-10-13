@@ -49,9 +49,9 @@ const STANDARDS_LIST = [
 
 export function StandardsMarquee21st() {
   return (
-    <section className="relative overflow-hidden border-y border-ink/10 bg-ink/[0.02] py-8 dark:border-white/10 dark:bg-white/[0.02]">
+    <section className="relative overflow-hidden border-y border-slate-200/70 bg-slate-50/50 py-8 dark:border-white/10 dark:bg-white/[0.02]">
       <div className="mx-auto max-w-7xl px-5 pb-5 text-center md:px-8">
-        <p className="text-xs font-mono font-semibold uppercase tracking-[0.24em] text-muted">
+        <p className="text-xs font-mono font-semibold uppercase tracking-[0.24em] text-slate-500 dark:text-zinc-400">
           Validated Against Global Regulatory & Quality Frameworks
         </p>
       </div>
@@ -65,19 +65,19 @@ export function StandardsMarquee21st() {
             return (
               <div
                 key={`m1-${idx}`}
-                className="group relative flex w-72 shrink-0 items-center gap-3.5 rounded-2xl border border-ink/10 bg-surface/80 p-4 shadow-sm backdrop-blur-md transition-all duration-300 hover:border-emerald-500/40 hover:shadow-md dark:border-white/10 dark:bg-zinc-900/80 dark:hover:border-emerald-400/30"
+                className="group relative flex w-72 shrink-0 items-center gap-3.5 rounded-2xl border border-slate-200/90 bg-white/95 p-4 shadow-xs backdrop-blur-md transition-all duration-300 hover:border-emerald-500/40 hover:shadow-md dark:border-white/10 dark:bg-zinc-900/80 dark:hover:border-emerald-400/30"
               >
-                <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-700 transition-colors group-hover:bg-emerald-500 group-hover:text-white dark:bg-emerald-400/15 dark:text-emerald-300">
+                <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-emerald-50 text-emerald-700 transition-colors group-hover:bg-emerald-600 group-hover:text-white dark:bg-emerald-400/15 dark:text-emerald-300">
                   <Icon className="size-5" />
                 </div>
                 <div className="min-w-0 flex-1">
                   <div className="flex items-center justify-between">
-                    <p className="truncate text-xs font-bold text-ink">{item.name}</p>
-                    <span className="rounded bg-ink/5 px-1.5 py-0.5 text-[9px] font-mono font-medium text-muted dark:bg-white/5">
+                    <p className="truncate text-xs font-bold text-slate-900 dark:text-white">{item.name}</p>
+                    <span className="rounded bg-slate-100 px-1.5 py-0.5 text-[9px] font-mono font-medium text-slate-600 dark:bg-white/5 dark:text-zinc-400">
                       {item.badge}
                     </span>
                   </div>
-                  <p className="truncate text-[11px] text-muted">{item.desc}</p>
+                  <p className="truncate text-[11px] text-slate-500 dark:text-zinc-400">{item.desc}</p>
                 </div>
               </div>
             );
@@ -89,19 +89,19 @@ export function StandardsMarquee21st() {
             return (
               <div
                 key={`m2-${idx}`}
-                className="group relative flex w-72 shrink-0 items-center gap-3.5 rounded-2xl border border-ink/10 bg-surface/80 p-4 shadow-sm backdrop-blur-md transition-all duration-300 hover:border-emerald-500/40 hover:shadow-md dark:border-white/10 dark:bg-zinc-900/80 dark:hover:border-emerald-400/30"
+                className="group relative flex w-72 shrink-0 items-center gap-3.5 rounded-2xl border border-slate-200/90 bg-white/95 p-4 shadow-xs backdrop-blur-md transition-all duration-300 hover:border-emerald-500/40 hover:shadow-md dark:border-white/10 dark:bg-zinc-900/80 dark:hover:border-emerald-400/30"
               >
-                <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-700 transition-colors group-hover:bg-emerald-500 group-hover:text-white dark:bg-emerald-400/15 dark:text-emerald-300">
+                <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-emerald-50 text-emerald-700 transition-colors group-hover:bg-emerald-600 group-hover:text-white dark:bg-emerald-400/15 dark:text-emerald-300">
                   <Icon className="size-5" />
                 </div>
                 <div className="min-w-0 flex-1">
                   <div className="flex items-center justify-between">
-                    <p className="truncate text-xs font-bold text-ink">{item.name}</p>
-                    <span className="rounded bg-ink/5 px-1.5 py-0.5 text-[9px] font-mono font-medium text-muted dark:bg-white/5">
+                    <p className="truncate text-xs font-bold text-slate-900 dark:text-white">{item.name}</p>
+                    <span className="rounded bg-slate-100 px-1.5 py-0.5 text-[9px] font-mono font-medium text-slate-600 dark:bg-white/5 dark:text-zinc-400">
                       {item.badge}
                     </span>
                   </div>
-                  <p className="truncate text-[11px] text-muted">{item.desc}</p>
+                  <p className="truncate text-[11px] text-slate-500 dark:text-zinc-400">{item.desc}</p>
                 </div>
               </div>
             );

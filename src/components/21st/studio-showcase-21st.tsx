@@ -84,12 +84,12 @@ export function StudioShowcase21st() {
                 onClick={() => setActiveModule(idx)}
                 className={`relative flex items-center gap-2.5 rounded-2xl px-5 py-3 text-xs sm:text-sm font-bold transition-all ${
                   isSelected
-                    ? "bg-ink text-background shadow-xl dark:bg-white dark:text-zinc-950 scale-105 z-10"
-                    : "bg-surface/80 text-muted hover:text-ink border border-ink/10 dark:bg-zinc-900/80 dark:border-white/10 dark:hover:text-white"
+                    ? "bg-emerald-700 text-white shadow-lg dark:bg-white dark:text-zinc-950 scale-105 z-10"
+                    : "bg-white/90 text-slate-600 hover:text-slate-900 border border-slate-200/90 shadow-xs dark:bg-zinc-900/80 dark:border-white/10 dark:text-zinc-400 dark:hover:text-white"
                 }`}
               >
-                <span className="font-mono text-[11px] opacity-60">{mod.num}</span>
-                <Icon className="size-4 text-accent" />
+                <span className="font-mono text-[11px] opacity-70">{mod.num}</span>
+                <Icon className={`size-4 ${isSelected ? "text-white dark:text-emerald-600" : "text-emerald-600 dark:text-emerald-400"}`} />
                 <span>{mod.title}</span>
               </button>
             );
@@ -97,7 +97,7 @@ export function StudioShowcase21st() {
         </div>
 
         {/* Master Studio Viewport */}
-        <div className="mt-10 mx-auto max-w-5xl rounded-3xl border border-ink/10 bg-surface/80 p-6 sm:p-10 shadow-2xl backdrop-blur-2xl dark:border-white/10 dark:bg-zinc-950/80">
+        <div className="mt-10 mx-auto max-w-5xl rounded-3xl border border-slate-200/90 bg-white/95 p-6 sm:p-10 shadow-xl backdrop-blur-2xl dark:border-white/10 dark:bg-zinc-950/80">
           <AnimatePresence mode="wait">
             {/* Module 1: GSPR Gap Radar */}
             {activeModule === 0 && (
@@ -109,12 +109,12 @@ export function StudioShowcase21st() {
                 transition={{ duration: 0.3 }}
                 className="space-y-6"
               >
-                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border-b border-ink/10 pb-5 dark:border-white/10">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border-b border-slate-200/80 pb-5 dark:border-white/10">
                   <div>
                     <span className="font-mono text-xs uppercase tracking-wider text-accent font-semibold">
                       Module 01 // Gap Assessment
                     </span>
-                    <h3 className="text-2xl font-bold text-ink">EU MDR & IVDR Annex I Clause Radar</h3>
+                    <h3 className="text-2xl font-bold text-slate-900 dark:text-white">EU MDR & IVDR Annex I Clause Radar</h3>
                   </div>
                   <div className="flex items-center gap-2 font-mono text-xs font-bold text-emerald-700 dark:text-emerald-400">
                     <span className="size-2 rounded-full bg-emerald-500 animate-pulse" />
@@ -131,11 +131,11 @@ export function StudioShowcase21st() {
                       onClick={() => setActiveGspr(idx)}
                       className={`text-left rounded-2xl p-4 transition-all border ${
                         activeGspr === idx
-                          ? "border-emerald-500/50 bg-emerald-50/70 dark:bg-emerald-950/40 dark:border-emerald-400/50 shadow-md"
-                          : "border-ink/5 bg-ink/[0.02] hover:bg-ink/[0.04] dark:border-white/5 dark:bg-white/[0.02]"
+                          ? "border-emerald-500/50 bg-emerald-50/80 text-emerald-950 dark:bg-emerald-950/40 dark:border-emerald-400/50 shadow-md"
+                          : "border-slate-200/80 bg-slate-50/70 hover:bg-slate-100/70 dark:border-white/5 dark:bg-white/[0.02]"
                       }`}
                     >
-                      <div className="flex items-center justify-between text-xs sm:text-sm font-bold text-ink">
+                      <div className="flex items-center justify-between text-xs sm:text-sm font-bold text-slate-900 dark:text-white">
                         <span className="truncate">{row.name}</span>
                         <span
                           className={`inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-xs font-bold ${
@@ -153,7 +153,7 @@ export function StudioShowcase21st() {
                         </span>
                       </div>
 
-                      <div className="mt-2.5 h-1.5 w-full overflow-hidden rounded-full bg-ink/10 dark:bg-white/10">
+                      <div className="mt-2.5 h-1.5 w-full overflow-hidden rounded-full bg-slate-200 dark:bg-white/10">
                         <div
                           className={`h-full rounded-full transition-all duration-500 ${
                             row.status === "Compliant" ? "bg-emerald-500" : row.status === "Partial" ? "bg-amber-500" : "bg-red-500"
@@ -165,14 +165,14 @@ export function StudioShowcase21st() {
                   ))}
                 </div>
 
-                <div className="flex flex-wrap items-center justify-between gap-4 rounded-xl bg-ink/[0.03] p-4 border border-ink/5 dark:bg-white/[0.03] dark:border-white/5 text-xs text-muted">
+                <div className="flex flex-wrap items-center justify-between gap-4 rounded-xl bg-slate-50 p-4 border border-slate-200/80 dark:bg-white/[0.03] dark:border-white/5 text-xs text-slate-600 dark:text-zinc-400">
                   <div className="flex items-center gap-2">
-                    <Clock className="size-4 text-accent" />
-                    <span>Estimated Remediation Time: <strong className="text-ink">1–2 Weeks</strong></span>
+                    <Clock className="size-4 text-emerald-600 dark:text-emerald-400" />
+                    <span>Estimated Remediation Time: <strong className="text-slate-900 dark:text-white">1–2 Weeks</strong></span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Coins className="size-4 text-accent" />
-                    <span>Estimated Cost Impact: <strong className="text-ink">Minimal (Internal SOP)</strong></span>
+                    <Coins className="size-4 text-emerald-600 dark:text-emerald-400" />
+                    <span>Estimated Cost Impact: <strong className="text-slate-900 dark:text-white">Minimal (Internal SOP)</strong></span>
                   </div>
                 </div>
               </motion.div>
@@ -188,12 +188,12 @@ export function StudioShowcase21st() {
                 transition={{ duration: 0.3 }}
                 className="space-y-6"
               >
-                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border-b border-ink/10 pb-5 dark:border-white/10">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border-b border-slate-200/80 pb-5 dark:border-white/10">
                   <div>
                     <span className="font-mono text-xs uppercase tracking-wider text-accent font-semibold">
                       Module 02 // Logic Tree
                     </span>
-                    <h3 className="text-2xl font-bold text-ink">Deterministic Annex VIII Classification</h3>
+                    <h3 className="text-2xl font-bold text-slate-900 dark:text-white">Deterministic Annex VIII Classification</h3>
                   </div>
                   <span className="font-mono text-xs font-bold text-emerald-700 dark:text-emerald-400">
                     Accuracy: 100% Mathematical
@@ -201,13 +201,13 @@ export function StudioShowcase21st() {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
-                  <div className="space-y-3 rounded-2xl border border-ink/10 bg-surface/70 p-5 text-xs dark:border-white/10 dark:bg-zinc-900/60">
+                  <div className="space-y-3 rounded-2xl border border-slate-200/80 bg-slate-50/80 p-5 text-xs dark:border-white/10 dark:bg-zinc-900/60">
                     <div className="flex gap-2.5">
                       <div className="size-6 shrink-0 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-[10px]">
                         RA
                       </div>
-                      <div className="rounded-2xl rounded-tl-none bg-ink/5 p-3 dark:bg-white/5">
-                        <p className="font-semibold text-ink">
+                      <div className="rounded-2xl rounded-tl-none bg-slate-100 p-3 dark:bg-white/5">
+                        <p className="font-semibold text-slate-900 dark:text-white">
                           Is the device surgically invasive into the central circulatory or nervous system?
                         </p>
                       </div>
@@ -226,16 +226,16 @@ export function StudioShowcase21st() {
                   </div>
 
                   <div className="space-y-3 font-mono text-xs">
-                    <div className="rounded-xl border border-ink/10 bg-surface p-3.5 dark:border-white/10 dark:bg-zinc-900">
-                      <span className="text-muted block text-[10px]">MDCG 2021-24 GUIDANCE</span>
-                      <span className="text-ink font-bold">Rule 8 Paragraph 3 Applied</span>
+                    <div className="rounded-xl border border-slate-200/80 bg-white p-3.5 shadow-2xs dark:border-white/10 dark:bg-zinc-900">
+                      <span className="text-slate-500 dark:text-zinc-400 block text-[10px]">MDCG 2021-24 GUIDANCE</span>
+                      <span className="text-slate-900 dark:text-white font-bold">Rule 8 Paragraph 3 Applied</span>
                     </div>
-                    <div className="rounded-xl border border-ink/10 bg-surface p-3.5 dark:border-white/10 dark:bg-zinc-900">
-                      <span className="text-muted block text-[10px]">NOTIFIED BODY EVIDENCE</span>
-                      <span className="text-ink font-bold">14 Rule Anchors Attached</span>
+                    <div className="rounded-xl border border-slate-200/80 bg-white p-3.5 shadow-2xs dark:border-white/10 dark:bg-zinc-900">
+                      <span className="text-slate-500 dark:text-zinc-400 block text-[10px]">NOTIFIED BODY EVIDENCE</span>
+                      <span className="text-slate-900 dark:text-white font-bold">14 Rule Anchors Attached</span>
                     </div>
-                    <div className="rounded-xl border border-ink/10 bg-surface p-3.5 dark:border-white/10 dark:bg-zinc-900">
-                      <span className="text-muted block text-[10px]">ZERO VARIATION GUARANTEE</span>
+                    <div className="rounded-xl border border-slate-200/80 bg-white p-3.5 shadow-2xs dark:border-white/10 dark:bg-zinc-900">
+                      <span className="text-slate-500 dark:text-zinc-400 block text-[10px]">ZERO VARIATION GUARANTEE</span>
                       <span className="text-emerald-700 dark:text-emerald-400 font-bold">Identical Input = Identical Output</span>
                     </div>
                   </div>
@@ -253,38 +253,38 @@ export function StudioShowcase21st() {
                 transition={{ duration: 0.3 }}
                 className="space-y-6"
               >
-                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border-b border-ink/10 pb-5 dark:border-white/10">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border-b border-slate-200/80 pb-5 dark:border-white/10">
                   <div>
                     <span className="font-mono text-xs uppercase tracking-wider text-accent font-semibold">
                       Module 03 // Audit Integrity
                     </span>
-                    <h3 className="text-2xl font-bold text-ink">21 CFR Part 11 Tamper-Evident Ledger</h3>
+                    <h3 className="text-2xl font-bold text-slate-900 dark:text-white">21 CFR Part 11 Tamper-Evident Ledger</h3>
                   </div>
                   <span className="font-mono text-xs font-bold text-emerald-700 dark:text-emerald-400">
                     SHA-256 Validated
                   </span>
                 </div>
 
-                <div className="rounded-2xl border border-ink/10 bg-surface/70 p-5 font-mono text-xs dark:border-white/10 dark:bg-zinc-900/60 space-y-3">
-                  <div className="flex justify-between border-b border-ink/5 pb-2 dark:border-white/5">
-                    <span className="text-muted">RECORD_ID</span>
-                    <span className="text-ink font-bold">RAC-2026-MED-3891</span>
+                <div className="rounded-2xl border border-slate-200/80 bg-slate-50/80 p-5 font-mono text-xs dark:border-white/10 dark:bg-zinc-900/60 space-y-3">
+                  <div className="flex justify-between border-b border-slate-200/70 pb-2 dark:border-white/5">
+                    <span className="text-slate-500 dark:text-zinc-400">RECORD_ID</span>
+                    <span className="text-slate-900 dark:text-white font-bold">RAC-2026-MED-3891</span>
                   </div>
-                  <div className="flex justify-between border-b border-ink/5 pb-2 dark:border-white/5">
-                    <span className="text-muted">SIGNER_AUTHORITY</span>
+                  <div className="flex justify-between border-b border-slate-200/70 pb-2 dark:border-white/5">
+                    <span className="text-slate-500 dark:text-zinc-400">SIGNER_AUTHORITY</span>
                     <span className="text-emerald-700 dark:text-emerald-400 font-bold">VP Regulatory Affairs (MFA Verified)</span>
                   </div>
-                  <div className="flex justify-between border-b border-ink/5 pb-2 dark:border-white/5">
-                    <span className="text-muted">BLOCKCHAIN_PROOF_HASH</span>
+                  <div className="flex justify-between border-b border-slate-200/70 pb-2 dark:border-white/5">
+                    <span className="text-slate-500 dark:text-zinc-400">BLOCKCHAIN_PROOF_HASH</span>
                     <span className="text-emerald-600 dark:text-emerald-400 truncate max-w-xs">e3b0c44298fc1c149afbf4c8996fb92427...</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-muted">NOTIFIED_BODY_STATUS</span>
-                    <span className="text-ink font-bold">STAGE 2 SUBMISSION PASS</span>
+                    <span className="text-slate-500 dark:text-zinc-400">NOTIFIED_BODY_STATUS</span>
+                    <span className="text-slate-900 dark:text-white font-bold">STAGE 2 SUBMISSION PASS</span>
                   </div>
                 </div>
 
-                <p className="text-xs text-muted">
+                <p className="text-xs text-slate-500 dark:text-zinc-400">
                   Every determination leaves a permanent cryptographic audit trail adhering to FDA 21 CFR Part 11 and EU MDR Article 10 quality requirements.
                 </p>
               </motion.div>
@@ -300,15 +300,15 @@ export function StudioShowcase21st() {
                 transition={{ duration: 0.3 }}
                 className="space-y-6"
               >
-                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border-b border-ink/10 pb-5 dark:border-white/10">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border-b border-slate-200/80 pb-5 dark:border-white/10">
                   <div>
                     <span className="font-mono text-xs uppercase tracking-wider text-accent font-semibold">
                       Module 04 // Ingestion Engine
                     </span>
-                    <h3 className="text-2xl font-bold text-ink">Multi-Format Technical File Parsing</h3>
+                    <h3 className="text-2xl font-bold text-slate-900 dark:text-white">Multi-Format Technical File Parsing</h3>
                   </div>
 
-                  <div className="flex rounded-lg bg-ink/5 p-1 dark:bg-white/5">
+                  <div className="flex rounded-lg bg-slate-100 p-1 dark:bg-white/5">
                     {(["pdf", "docx", "xlsx"] as const).map((fmt) => (
                       <button
                         key={fmt}
@@ -316,8 +316,8 @@ export function StudioShowcase21st() {
                         onClick={() => setActiveFileFmt(fmt)}
                         className={`rounded px-3 py-1 text-xs font-mono font-bold uppercase transition-all ${
                           activeFileFmt === fmt
-                            ? "bg-surface text-ink shadow-sm dark:bg-zinc-800 dark:text-emerald-300"
-                            : "text-muted hover:text-ink"
+                            ? "bg-white text-emerald-700 shadow-xs dark:bg-zinc-800 dark:text-emerald-300"
+                            : "text-slate-500 hover:text-slate-900 dark:text-zinc-400 dark:hover:text-white"
                         }`}
                       >
                         .{fmt}
@@ -327,36 +327,36 @@ export function StudioShowcase21st() {
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                  <div className="rounded-xl border border-ink/10 bg-surface p-4 dark:border-white/10 dark:bg-zinc-900">
-                    <div className="flex items-center gap-2 text-xs font-bold text-ink">
+                  <div className="rounded-xl border border-slate-200/80 bg-white p-4 shadow-2xs dark:border-white/10 dark:bg-zinc-900">
+                    <div className="flex items-center gap-2 text-xs font-bold text-slate-900 dark:text-white">
                       <FileText className="size-4 text-emerald-600 dark:text-emerald-400" />
                       Clinical Evaluation
                     </div>
-                    <p className="mt-1 text-[11px] text-muted">Annex XIV compliant CER extraction</p>
+                    <p className="mt-1 text-[11px] text-slate-500 dark:text-zinc-400">Annex XIV compliant CER extraction</p>
                     <div className="mt-3 flex items-center justify-between text-[11px] font-mono text-emerald-700 dark:text-emerald-400">
                       <span>142 Pages</span>
                       <span>Parsed 100%</span>
                     </div>
                   </div>
 
-                  <div className="rounded-xl border border-ink/10 bg-surface p-4 dark:border-white/10 dark:bg-zinc-900">
-                    <div className="flex items-center gap-2 text-xs font-bold text-ink">
+                  <div className="rounded-xl border border-slate-200/80 bg-white p-4 shadow-2xs dark:border-white/10 dark:bg-zinc-900">
+                    <div className="flex items-center gap-2 text-xs font-bold text-slate-900 dark:text-white">
                       <FileText className="size-4 text-emerald-600 dark:text-emerald-400" />
                       Risk Management File
                     </div>
-                    <p className="mt-1 text-[11px] text-muted">ISO 14971 clause cross-mapping</p>
+                    <p className="mt-1 text-[11px] text-slate-500 dark:text-zinc-400">ISO 14971 clause cross-mapping</p>
                     <div className="mt-3 flex items-center justify-between text-[11px] font-mono text-emerald-700 dark:text-emerald-400">
                       <span>88 Hazards</span>
                       <span>Mapped</span>
                     </div>
                   </div>
 
-                  <div className="rounded-xl border border-ink/10 bg-surface p-4 dark:border-white/10 dark:bg-zinc-900">
-                    <div className="flex items-center gap-2 text-xs font-bold text-ink">
+                  <div className="rounded-xl border border-slate-200/80 bg-white p-4 shadow-2xs dark:border-white/10 dark:bg-zinc-900">
+                    <div className="flex items-center gap-2 text-xs font-bold text-slate-900 dark:text-white">
                       <FileText className="size-4 text-emerald-600 dark:text-emerald-400" />
                       Software Architecture
                     </div>
-                    <p className="mt-1 text-[11px] text-muted">IEC 62304 Class B/C tracing</p>
+                    <p className="mt-1 text-[11px] text-slate-500 dark:text-zinc-400">IEC 62304 Class B/C tracing</p>
                     <div className="mt-3 flex items-center justify-between text-[11px] font-mono text-emerald-700 dark:text-emerald-400">
                       <span>19 Software Units</span>
                       <span>Verified</span>
