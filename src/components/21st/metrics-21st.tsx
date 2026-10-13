@@ -7,7 +7,7 @@ export function Metrics21st() {
   const statIcons = [Layers, CheckCircle, TrendingUp, ShieldCheck];
 
   return (
-    <section className="py-20 sm:py-28 relative overflow-hidden">
+    <section id="metrics" className="py-20 sm:py-28 relative overflow-hidden">
       <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <p className="font-mono text-xs font-semibold uppercase tracking-[0.24em] text-accent">

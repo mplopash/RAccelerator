@@ -49,17 +49,19 @@ const STANDARDS_LIST = [
 
 export function StandardsMarquee21st() {
   return (
-    <section className="relative overflow-hidden border-y border-slate-200/70 bg-slate-50/50 py-8 dark:border-white/10 dark:bg-white/[0.02]">
-      <div className="mx-auto max-w-7xl px-5 pb-5 text-center md:px-8">
-        <p className="text-xs font-mono font-semibold uppercase tracking-[0.24em] text-slate-500 dark:text-zinc-400">
-          Validated Against Global Regulatory & Quality Frameworks
-        </p>
-      </div>
+    <section className="relative py-6 sm:py-10">
+      <div className="mx-auto max-w-7xl px-5 md:px-8">
+        <div className="relative overflow-hidden rounded-3xl border border-slate-200/90 bg-white/75 py-7 shadow-xs backdrop-blur-xl transition-all duration-300 dark:border-white/10 dark:bg-zinc-900/50">
+          <div className="px-5 pb-5 text-center">
+            <p className="text-xs font-mono font-semibold uppercase tracking-[0.24em] text-slate-500 dark:text-zinc-400">
+              Validated Against Global Regulatory & Quality Frameworks
+            </p>
+          </div>
 
-      {/* Marquee Container with fade edge masks */}
-      <div className="relative w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
-        <div className="animate-marquee flex gap-4 py-2">
-          {/* First loop */}
+          {/* Marquee Container with fade edge masks contained within container */}
+          <div className="relative w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_6%,black_94%,transparent)]">
+            <div className="animate-marquee flex gap-4 py-2">
+              {/* First loop */}
           {STANDARDS_LIST.map((item, idx) => {
             const Icon = item.icon;
             return (
@@ -106,6 +108,8 @@ export function StandardsMarquee21st() {
               </div>
             );
           })}
+            </div>
+          </div>
         </div>
       </div>
     </section>

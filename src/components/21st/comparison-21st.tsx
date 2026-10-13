@@ -31,7 +31,7 @@ export function Comparison21st() {
   const passYield = deviceClass === "III" ? "98.8%" : "99.4%";
 
   return (
-    <section id="why" className="py-20 sm:py-28 relative overflow-hidden bg-ink/[0.015] dark:bg-white/[0.01]">
+    <section id="comparison" className="py-20 sm:py-28 relative overflow-hidden bg-ink/[0.015] dark:bg-white/[0.01]">
       <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/5 px-3.5 py-1 text-xs font-semibold text-accent dark:border-emerald-400/20 dark:text-emerald-300">
@@ -49,20 +49,20 @@ export function Comparison21st() {
         {/* Dual Comparison Cards */}
         <div className="mt-14 grid grid-cols-1 gap-8 lg:grid-cols-2">
           {/* Left: Generic LLM Card */}
-          <div className="relative rounded-3xl border border-red-500/20 bg-surface/60 p-6 sm:p-8 backdrop-blur-md shadow-sm dark:bg-zinc-900/40 dark:border-red-500/20">
+          <div className="relative rounded-3xl border border-red-500/20 bg-white/80 p-6 sm:p-8 backdrop-blur-md shadow-xs dark:bg-zinc-900/40 dark:border-red-500/20">
             <div className="flex items-center justify-between border-b border-red-500/10 pb-5 dark:border-red-500/10">
               <div>
                 <span className="text-xs font-mono uppercase tracking-wider text-red-600 dark:text-red-400 font-bold">
                   Standard LLM Frameworks
                 </span>
-                <h3 className="mt-1 text-2xl font-bold text-ink">Generic Probabilistic AI</h3>
+                <h3 className="mt-1 text-2xl font-bold text-slate-900 dark:text-white">Generic Probabilistic AI</h3>
               </div>
               <div className="flex size-10 items-center justify-center rounded-xl bg-red-500/10 text-red-600 dark:text-red-400">
                 <AlertTriangle className="size-5" />
               </div>
             </div>
 
-            <p className="mt-4 text-xs sm:text-sm text-muted">
+            <p className="mt-4 text-xs sm:text-sm text-slate-600 dark:text-zinc-400">
               General-purpose chatbots re-generate outputs with variability, hallucinate standard clauses, and fail Notified Body scrutiny.
             </p>
 
@@ -72,23 +72,23 @@ export function Comparison21st() {
                   <div className="flex size-5 shrink-0 items-center justify-center rounded-full bg-red-500/10 text-red-600 dark:text-red-400 mt-0.5">
                     <X className="size-3.5" />
                   </div>
-                  <span className="text-muted line-through opacity-85">{item}</span>
+                  <span className="text-slate-500 dark:text-zinc-400 line-through opacity-85">{item}</span>
                 </li>
               ))}
             </ul>
 
-            <div className="mt-8 rounded-xl bg-red-50/50 p-4 border border-red-500/10 dark:bg-red-950/20 dark:border-red-500/20">
+            <div className="mt-8 rounded-xl bg-red-50/70 p-4 border border-red-500/15 dark:bg-red-950/20 dark:border-red-500/20">
               <p className="text-xs font-semibold text-red-800 dark:text-red-300">
                 Audit Consequence:
               </p>
-              <p className="mt-1 text-xs text-red-700/80 dark:text-red-400/80">
+              <p className="mt-1 text-xs text-red-700/90 dark:text-red-400/80">
                 High probability of Major Findings during Notified Body Stage 2 review due to unverifiable citations and random variations.
               </p>
             </div>
           </div>
 
           {/* Right: RAccelerator Deterministic AI (Glowing Winner Card) */}
-          <div className="relative rounded-3xl border-2 border-emerald-500/50 bg-gradient-to-b from-emerald-500/[0.06] to-surface/80 p-6 sm:p-8 backdrop-blur-xl shadow-xl shadow-emerald-500/10 dark:from-emerald-400/[0.08] dark:to-zinc-900/90 dark:border-emerald-400/40">
+          <div className="relative rounded-3xl border-2 border-emerald-500/50 bg-gradient-to-b from-emerald-500/[0.06] to-white/95 p-6 sm:p-8 backdrop-blur-xl shadow-xl shadow-emerald-500/10 dark:from-emerald-400/[0.08] dark:to-zinc-900/90 dark:border-emerald-400/40">
             {/* Top winner badge */}
             <div className="absolute -top-3.5 right-8">
               <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-600 px-3.5 py-1 text-xs font-bold text-white shadow-md dark:bg-emerald-500 dark:text-zinc-950">
@@ -136,8 +136,8 @@ export function Comparison21st() {
         </div>
 
         {/* Interactive Notified Body Submission ROI & Acceleration Calculator */}
-        <div className="mt-16 rounded-3xl border border-emerald-500/30 bg-surface/90 p-6 sm:p-10 shadow-2xl backdrop-blur-2xl dark:border-emerald-400/20 dark:bg-zinc-950/90">
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border-b border-ink/10 pb-6 dark:border-white/10">
+        <div className="mt-16 rounded-3xl border border-emerald-500/30 bg-white/95 p-6 sm:p-10 shadow-xl backdrop-blur-2xl dark:border-emerald-400/20 dark:bg-zinc-950/90">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border-b border-slate-200/80 pb-6 dark:border-white/10">
             <div className="flex items-center gap-3">
               <div className="flex size-11 items-center justify-center rounded-2xl bg-emerald-500/20 text-emerald-700 dark:bg-emerald-400/20 dark:text-emerald-300">
                 <Calculator className="size-5" />
@@ -146,7 +146,7 @@ export function Comparison21st() {
                 <span className="font-mono text-xs uppercase tracking-wider text-accent font-bold">
                   Interactive Impact Model
                 </span>
-                <h3 className="text-2xl font-black text-ink">Regulatory Acceleration & ROI Calculator</h3>
+                <h3 className="text-2xl font-black text-slate-900 dark:text-white">Regulatory Acceleration & ROI Calculator</h3>
               </div>
             </div>
 
@@ -162,7 +162,7 @@ export function Comparison21st() {
             <div className="lg:col-span-7 space-y-6">
               {/* Device Classification Toggle */}
               <div>
-                <label className="text-xs font-mono uppercase tracking-wider text-muted font-bold block mb-2">
+                <label className="text-xs font-mono uppercase tracking-wider text-slate-500 dark:text-zinc-400 font-bold block mb-2">
                   Device Risk Classification (EU MDR Annex VIII)
                 </label>
                 <div className="grid grid-cols-3 gap-2">
@@ -174,7 +174,7 @@ export function Comparison21st() {
                       className={`rounded-xl py-2.5 px-3 text-xs font-bold font-mono transition-all border ${
                         deviceClass === cls
                           ? "bg-emerald-600 text-white border-emerald-500 shadow-md dark:bg-emerald-400 dark:text-zinc-950"
-                          : "bg-surface text-ink border-ink/10 hover:border-emerald-500/30 dark:bg-zinc-900 dark:border-white/10 dark:text-zinc-300"
+                          : "bg-slate-50 text-slate-700 border-slate-200 hover:border-emerald-500/30 dark:bg-zinc-900 dark:border-white/10 dark:text-zinc-300"
                       }`}
                     >
                       Class {cls} {cls === "III" ? "(Implantable)" : ""}
@@ -185,7 +185,7 @@ export function Comparison21st() {
 
               {/* Slider 1: Active Devices Count */}
               <div>
-                <div className="flex justify-between text-xs font-semibold text-ink mb-1.5">
+                <div className="flex justify-between text-xs font-semibold text-slate-900 dark:text-white mb-1.5">
                   <span>Active Device Portfolios in Pipeline</span>
                   <span className="font-mono font-bold text-emerald-600 dark:text-emerald-400 text-sm">
                     {deviceCount} {deviceCount === 1 ? "Device" : "Devices"}
@@ -197,9 +197,9 @@ export function Comparison21st() {
                   max="12"
                   value={deviceCount}
                   onChange={(e) => setDeviceCount(Number(e.target.value))}
-                  className="w-full accent-emerald-500 h-2 bg-ink/10 rounded-lg cursor-pointer dark:bg-white/10"
+                  className="w-full accent-emerald-500 h-2 bg-slate-200 rounded-lg cursor-pointer dark:bg-white/10"
                 />
-                <div className="flex justify-between text-[10px] font-mono text-muted mt-1">
+                <div className="flex justify-between text-[10px] font-mono text-slate-500 dark:text-zinc-400 mt-1">
                   <span>1 device</span>
                   <span>6 devices</span>
                   <span>12 devices</span>
@@ -208,7 +208,7 @@ export function Comparison21st() {
 
               {/* Slider 2: Average Technical File Documentation Pages */}
               <div>
-                <div className="flex justify-between text-xs font-semibold text-ink mb-1.5">
+                <div className="flex justify-between text-xs font-semibold text-slate-900 dark:text-white mb-1.5">
                   <span>Avg. Technical File Volume per Device</span>
                   <span className="font-mono font-bold text-emerald-600 dark:text-emerald-400 text-sm">
                     {docPages} Pages (DHF + CER + Risk)
@@ -221,9 +221,9 @@ export function Comparison21st() {
                   step="10"
                   value={docPages}
                   onChange={(e) => setDocPages(Number(e.target.value))}
-                  className="w-full accent-emerald-500 h-2 bg-ink/10 rounded-lg cursor-pointer dark:bg-white/10"
+                  className="w-full accent-emerald-500 h-2 bg-slate-200 rounded-lg cursor-pointer dark:bg-white/10"
                 />
-                <div className="flex justify-between text-[10px] font-mono text-muted mt-1">
+                <div className="flex justify-between text-[10px] font-mono text-slate-500 dark:text-zinc-400 mt-1">
                   <span>50 pages (Modular)</span>
                   <span>250 pages (Typical)</span>
                   <span>450+ pages (Complex)</span>
@@ -232,38 +232,38 @@ export function Comparison21st() {
             </div>
 
             {/* Calculated Output Display (5 cols) */}
-            <div className="lg:col-span-5 rounded-2xl border border-emerald-500/30 bg-gradient-to-br from-emerald-500/[0.08] to-teal-500/[0.04] p-6 text-ink space-y-4 dark:border-emerald-400/30 dark:bg-zinc-900/80">
+            <div className="lg:col-span-5 rounded-2xl border border-emerald-500/30 bg-gradient-to-br from-emerald-500/[0.08] to-teal-500/[0.04] p-6 text-slate-900 space-y-4 dark:border-emerald-400/30 dark:bg-zinc-900/80 dark:text-white">
               <div>
-                <span className="font-mono text-[10px] uppercase tracking-wider text-muted font-bold block">
+                <span className="font-mono text-[10px] uppercase tracking-wider text-slate-500 dark:text-zinc-400 font-bold block">
                   ESTIMATED REGULATORY CONSULTING & AUDIT SAVINGS
                 </span>
                 <p className="mt-1 text-3xl sm:text-4xl font-black text-emerald-700 dark:text-emerald-400 tracking-tight">
                   ${totalCostSaved}
                 </p>
-                <span className="text-[11px] text-muted">
+                <span className="text-[11px] text-slate-500 dark:text-zinc-400">
                   Based on $250/hr senior EU regulatory consultant remediation costs.
                 </span>
               </div>
 
-              <div className="grid grid-cols-2 gap-3 pt-3 border-t border-ink/10 dark:border-white/10 text-xs">
+              <div className="grid grid-cols-2 gap-3 pt-3 border-t border-slate-200/80 dark:border-white/10 text-xs">
                 <div>
-                  <span className="text-muted block text-[10px] font-mono">TIME TO CE MARK</span>
-                  <strong className="text-sm font-bold text-ink flex items-center gap-1">
-                    <Clock className="size-3.5 text-accent" />
+                  <span className="text-slate-500 dark:text-zinc-400 block text-[10px] font-mono">TIME TO CE MARK</span>
+                  <strong className="text-sm font-bold text-slate-900 dark:text-white flex items-center gap-1">
+                    <Clock className="size-3.5 text-emerald-600 dark:text-emerald-400" />
                     -{monthsSaved} Months
                   </strong>
                 </div>
                 <div>
-                  <span className="text-muted block text-[10px] font-mono">HOURS RECLAIMED</span>
-                  <strong className="text-sm font-bold text-ink flex items-center gap-1">
-                    <TrendingUp className="size-3.5 text-accent" />
+                  <span className="text-slate-500 dark:text-zinc-400 block text-[10px] font-mono">HOURS RECLAIMED</span>
+                  <strong className="text-sm font-bold text-slate-900 dark:text-white flex items-center gap-1">
+                    <TrendingUp className="size-3.5 text-emerald-600 dark:text-emerald-400" />
                     {hoursSaved} hrs
                   </strong>
                 </div>
               </div>
 
-              <div className="rounded-xl bg-surface/90 p-3 border border-ink/5 dark:bg-zinc-950/80 dark:border-white/5 flex items-center justify-between text-xs">
-                <span className="text-muted">Notified Body Stage 2 Yield:</span>
+              <div className="rounded-xl bg-white p-3 border border-slate-200/80 shadow-2xs dark:bg-zinc-950/80 dark:border-white/5 flex items-center justify-between text-xs">
+                <span className="text-slate-500 dark:text-zinc-400">Notified Body Stage 2 Yield:</span>
                 <span className="font-mono font-black text-emerald-600 dark:text-emerald-400">
                   {passYield} First-Pass
                 </span>

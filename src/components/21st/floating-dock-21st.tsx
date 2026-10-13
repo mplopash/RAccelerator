@@ -52,7 +52,7 @@ export function FloatingDock21st() {
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: 50, opacity: 0 }}
             transition={{ type: "spring", stiffness: 280, damping: 22 }}
-            className="flex items-center gap-1.5 rounded-full px-3 py-1.5 shadow-2xl backdrop-blur-2xl border border-ink/10 bg-surface/80 dark:border-white/15 dark:bg-zinc-950/80"
+            className="flex items-center gap-1.5 rounded-full px-3 py-1.5 shadow-2xl backdrop-blur-2xl border border-slate-200/90 bg-white/95 text-slate-700 dark:border-white/15 dark:bg-zinc-950/90 dark:text-zinc-300"
           >
             {DOCK_ITEMS.map((item, idx) => {
               const Icon = item.icon;

@@ -1,4 +1,3 @@
-import { DossierField } from "@/components/dossier-field";
 import { MotionReady } from "@/components/motion-chrome";
 import { Loader21st } from "@/components/21st/loader-21st";
 import { Hero21st } from "@/components/21st/hero-21st";
@@ -12,6 +11,7 @@ import { Security21st } from "@/components/21st/security-21st";
 import { Faq21st } from "@/components/21st/faq-21st";
 import { Cta21st } from "@/components/21st/cta-21st";
 import { FloatingDock21st } from "@/components/21st/floating-dock-21st";
+import { ScrollInteractionHud } from "@/components/21st/scroll-interaction-hud";
 import { faqs } from "@/lib/content";
 import { site } from "@/lib/site";
 
@@ -56,7 +56,6 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <DossierField />
 
       {/* Awwwards Flagship Architecture */}
       <Hero21st />
@@ -72,6 +71,9 @@ export default function Home() {
 
       {/* Discrete Collapsible Spatial Dock */}
       <FloatingDock21st />
+
+      {/* Fluid Interactive Scroll HUD */}
+      <ScrollInteractionHud />
 
       <MotionReady />
     </main>

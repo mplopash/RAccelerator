@@ -98,9 +98,9 @@ function Card({
         boxShadow:
           "0 0 #0000004d, 0 9px 20px #0000004a, 0 37px 37px #00000042, 0 84px 50px #00000026, 0 149px 60px #0000000a, 0 233px 65px #00000003",
       }}
-      className="mx-auto mt-8 sm:mt-12 w-full max-w-6xl xl:max-w-7xl rounded-[28px] sm:rounded-[36px] border border-ink/10 bg-surface/90 p-2 sm:p-3 shadow-2xl backdrop-blur-2xl transition-shadow md:p-4 dark:border-white/10 dark:bg-zinc-950/90"
+      className="mx-auto mt-8 sm:mt-12 w-full max-w-6xl xl:max-w-7xl rounded-[28px] sm:rounded-[36px] border border-slate-200/90 bg-white/95 p-2 sm:p-3 shadow-2xl backdrop-blur-2xl transition-shadow md:p-4 dark:border-white/10 dark:bg-zinc-950/90"
     >
-      <div className="h-full w-full overflow-hidden rounded-[20px] sm:rounded-[28px] border border-ink/10 bg-surface dark:border-white/10 dark:bg-zinc-900/90">
+      <div className="h-full w-full overflow-hidden rounded-[20px] sm:rounded-[28px] border border-slate-200/90 bg-white dark:border-white/10 dark:bg-zinc-900/90">
         {children}
       </div>
     </motion.div>
